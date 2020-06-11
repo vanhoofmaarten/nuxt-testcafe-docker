@@ -1,0 +1,52 @@
+{
+  "name": "nuxt-testcafe-docker",
+  "version": "1.0.0",
+  "description": "Run TestCafé tests against Nuxt in dev-mode in a Docker container",
+  "author": "Maarten Van Hoof",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt-ts",
+    "build": "nuxt-ts build",
+    "generate": "nuxt-ts generate",
+    "start": "nuxt-ts start",
+    "lint": "run-s lint:*",
+    "lint:es": "eslint --fix --ext .ts,.vue --ignore-path .gitignore src",
+    "lint:style": "stylelint --fix src/**/*.{vue,css}"
+  },
+  "lint-staged": {
+    "*.{js,vue}": "npm run lint:es",
+    "*.{css,vue}": "npm run lint:style"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "nuxt": "^2.0.0",
+    "@nuxt/typescript-runtime": "^0.4.0",
+    "@nuxtjs/dotenv": "^1.4.0"
+  },
+  "devDependencies": {
+    "@nuxt/typescript-build": "^1.0.2",
+    "@nuxtjs/eslint-config-typescript": "^2.0.0",
+    "@nuxtjs/eslint-module": "^2.0.0",
+    "@nuxtjs/stylelint-module": "^4.0.0",
+    "@typescript-eslint/eslint-plugin": "^3.2.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-typescript": "^8.0.2",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-nuxt": ">=0.4.2",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.0.0",
+    "lint-staged": "^10.0.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.0.5",
+    "stylelint": "^13.6.0",
+    "stylelint-config-prettier": "^8.0.1",
+    "stylelint-config-recess-order": "^2.0.4",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0"
+  }
+}
