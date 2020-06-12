@@ -11,10 +11,11 @@
     "start": "nuxt-ts start",
     "lint": "run-s lint:*",
     "lint:es": "eslint --fix --ext .ts,.vue --ignore-path .gitignore src",
-    "lint:style": "stylelint --fix src/**/*.{vue,css}"
+    "lint:style": "stylelint --fix src/**/*.{vue,css}",
+    "test:e2e": "ts-node --project tsconfig.json tests/e2e/runner.ts"
   },
   "lint-staged": {
-    "*.{js,vue}": "npm run lint:es",
+    "*.{ts,vue}": "npm run lint:es",
     "*.{css,vue}": "npm run lint:style"
   },
   "husky": {
@@ -47,6 +48,8 @@
     "stylelint-config-prettier": "^8.0.1",
     "stylelint-config-recess-order": "^2.0.4",
     "stylelint-config-standard": "^20.0.0",
-    "stylelint-order": "^4.1.0"
+    "stylelint-order": "^4.1.0",
+    "testcafe": "^1.8.6",
+    "ts-node": "^8.10.2"
   }
 }

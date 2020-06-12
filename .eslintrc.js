@@ -2,11 +2,11 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    node: true
+    node: true,
   },
   parserOptions: {
     project: './tsconfig.json',
-    extraFileExtensions: ['.vue']
+    extraFileExtensions: ['.vue'],
   },
   extends: [
     'airbnb-typescript/base',
@@ -16,10 +16,19 @@ module.exports = {
     'plugin:nuxt/recommended',
     'prettier',
     'prettier/vue',
-    'prettier/@typescript-eslint'
+    'prettier/@typescript-eslint',
   ],
   plugins: ['prettier'],
   settings: {
-    'import/core-modules': ['vue']
-  }
+    'import/core-modules': ['vue'],
+  },
+  overrides: [
+    {
+      files: ['./tests/e2e/**/*.{ts,js}'],
+      globals: {
+        fixture: false,
+        test: false,
+      },
+    },
+  ],
 };
